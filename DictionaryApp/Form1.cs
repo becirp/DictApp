@@ -143,7 +143,7 @@ namespace DictionaryApp
 
         private void buttonTest_Click(object sender, EventArgs e)
         {
-            Form2 testForm = new Form2(NorwegianToEnglishDictionary, EnglishToNorwegianDictionary);
+            Form2 testForm = new Form2(NorwegianToEnglishDictionary);
             testForm.Show();
         }
     }
