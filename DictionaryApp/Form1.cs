@@ -12,9 +12,10 @@ using System.Windows.Forms;
 /*
     1. Svrha aplikacije je da pomaze u testiranju naucenih rijeci. Treba da omogucava unos novih rijeci od strane korisnika. Oba rjecnika treba da cuva na disku. 
     U aplikaciju se ucitava najnovija verzija rjecnika prilikom pozivanja aplikacije. Testiranje podrazumijeva po 20 nasumicno odabranih parova Eng-Nor i Nor-Eng.
-    2. Kad budes pravio Wix install, koristi za pocetak template koji daje wix plugin. Za pojedinacne postavke vidjeti kako je radjeno u DRM-APP. Provjeriti koji od
+    2. Zasto dva rjecnika: da se moze koristiti contain metoda za brzo trazenje rijeci za obostrani prevod. Za kreiranje samog testa dovoljan jedan rijecnik.
+    3. Ubaciti da se odredjena rijec moze naci i ispraviti, ako je neispravno ukucana u tekstbox i dodana u rijecnik. Napraviti preglednik rijecnika pomocu tabele.
+    4. Kad budes pravio Wix install, koristi za pocetak template koji daje wix plugin. Za pojedinacne postavke vidjeti kako je radjeno u DRM-APP. Provjeriti koji od
     GUID-a je fiksan, vjerovatno onaj upgrade id.
-    3. Podesiti git.
      */
 namespace DictionaryApp
 {    

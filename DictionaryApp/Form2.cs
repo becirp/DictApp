@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* Kreiran iterator za citanje svih vrijednosti rijecnika. Napraviti random generator za 10 rijeci bez ponavljanja parova. */
-/* Bug: ponavljanja izmedju dvije liste eng i nor test. Napraviti rand od 20 clanova bez ponavljanja i napraviti od toga dva testa. Vidjeti na kraju da se test pravi od jednog rijecnika, 
-   posto su u biti isti rijecnik. */
+/* 1. Napravljen test. Poredi rijec iz labele sa ukucanom rijeci iz tekstboksa. Ako se poklapaju testirana rijec je tacno prevedena. Oznaciti tacne tekstboxe zelenom bojom,
+ * a netacne crvenom. Ispisati skor od 20 bodova.
+ * 2. Ubaciti da se moze prikazati tacno rjesenje, na rijecima koje su pogresno uradjene.
+ * 3. Za sada ne priznaje da zenski rod moze imati muski clan. Mora se znati da je neka rijec zenski rod.
+ */
+
+/* Opcionalna kasnija prosirenja: Napraviti da se vodi evidencija skorova uzetih u toku vremena; Staviti opcionalno vremensko ogranicenje na test; Provjeriti osjetljivost na kapitalizaciju rijeci;
+ * Ubaciti audio fajlove za teske rijeci - ovo bi vrlo vjerovatno trazilo da se rijec pretvori u objekat klase sa atributima engWord, norWord, audio, explanation itd.;
+ */
 namespace DictionaryApp
 {
     public partial class Form2 : Form
@@ -20,7 +27,10 @@ namespace DictionaryApp
         private List<TextBox> norTextboxList = new List<TextBox>();
         private List<TextBox> engTextboxList = new List<TextBox>();
         private List<Label> norLabelList = new List<Label>();
-        private List<Label> engLabelList = new List<Label>();        
+        private List<Label> engLabelList = new List<Label>();
+        private List<Label> norLabelCorrectionsList = new List<Label>();
+        private List<Label> engLabelCorrectionsList = new List<Label>();
+        private Dictionary<String, String> randomDict = new Dictionary<String, String>();
 
         public Form2(Dictionary<String, String> NorwegianToEnglishDictionary)
         {
@@ -29,12 +39,15 @@ namespace DictionaryApp
             InitializeTextBoxList();
             InitializeLabelList();
             CreateTest();
+            HideCorrectionLabels();
         }
+
+
 
         private void CreateTest()
         {
             int i = 0;
-            Dictionary<String, String> randomDict =  RandomWords(DictionaryCpy, numberOfWords);
+            randomDict =  RandomWords(DictionaryCpy, numberOfWords);
             foreach(var member in randomDict)
             {
                 if(i < numberOfWords/2)
@@ -68,6 +81,28 @@ namespace DictionaryApp
             engLabelList.Add(labelEng8);
             engLabelList.Add(labelEng9);
             engLabelList.Add(labelEng10);
+
+            norLabelCorrectionsList.Add(labelNorCorrection1);
+            norLabelCorrectionsList.Add(labelNorCorrection2);
+            norLabelCorrectionsList.Add(labelNorCorrection3);
+            norLabelCorrectionsList.Add(labelNorCorrection4);
+            norLabelCorrectionsList.Add(labelNorCorrection5);
+            norLabelCorrectionsList.Add(labelNorCorrection6);
+            norLabelCorrectionsList.Add(labelNorCorrection7);
+            norLabelCorrectionsList.Add(labelNorCorrection8);
+            norLabelCorrectionsList.Add(labelNorCorrection9);
+            norLabelCorrectionsList.Add(labelNorCorrection10);
+
+            engLabelCorrectionsList.Add(labelEngCorrection1);
+            engLabelCorrectionsList.Add(labelEngCorrection2);
+            engLabelCorrectionsList.Add(labelEngCorrection3);
+            engLabelCorrectionsList.Add(labelEngCorrection4);
+            engLabelCorrectionsList.Add(labelEngCorrection5);
+            engLabelCorrectionsList.Add(labelEngCorrection6);
+            engLabelCorrectionsList.Add(labelEngCorrection7);
+            engLabelCorrectionsList.Add(labelEngCorrection8);
+            engLabelCorrectionsList.Add(labelEngCorrection9);
+            engLabelCorrectionsList.Add(labelEngCorrection10);
         }
 
         private void InitializeTextBoxList()
@@ -95,22 +130,6 @@ namespace DictionaryApp
             engTextboxList.Add(textBoxEng10);
         }
 
-        //For testing only.
-        //public void WriteDictInRichTBox()
-        //{           
-        //    List<String> norWordList = RandomWords(DictionaryCpy, numberOfWords);
-        //    for(int i = 0; i < norWordList.Count; i++)
-        //    {
-        //        richTextBox1.Text += norWordList[i] + "\r\n";
-        //    }
-
-        //    List<String> engWordList = RandomWords(englishToNorwegianDictionaryCpy, numberOfWords);
-        //    for (int i = 0; i < engWordList.Count; i++)
-        //    {
-        //        richTextBox1.Text += engWordList[i] + "\r\n";
-        //    }
-        //}
-
         private Dictionary<String, String> RandomWords(Dictionary<String, String> DictionaryCpy, int numberOfWords)
         {
             int i = 0;
@@ -120,6 +139,7 @@ namespace DictionaryApp
             List<String> dictKeys = Enumerable.ToList(DictionaryCpy.Keys);            
             List<String> randWords = new List<String>();            
             int currentRandomValue;
+            //Osigurati da ne moze zaglaviti petlja.
             while (true)
             {
                 currentRandomValue = rand.Next(size);
@@ -134,6 +154,61 @@ namespace DictionaryApp
                 randDictionary.Add(randWords[i], DictionaryCpy[randWords[i]]);
             }            
             return randDictionary;
+        }
+
+        private void buttonCheckTest_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            LockTextBoxes();
+            foreach(var member in randomDict)
+            {
+                if (i < 10)
+                {
+                    if (member.Value == engTextboxList[i].Text) engTextboxList[i].BackColor = Color.Green;
+                    else if (member.Value != engTextboxList[i].Text)
+                    {
+                        engTextboxList[i].BackColor = Color.Red;
+                        engLabelCorrectionsList[i].Text = member.Value;
+                        engLabelCorrectionsList[i].Visible = true;
+                    }
+                }
+                else if (i >= 10)
+                {
+                    if (member.Key == norTextboxList[i - 10].Text) norTextboxList[i - 10].BackColor = Color.Green;
+                    else if (member.Key != norTextboxList[i - 10].Text)
+                    {
+                        norTextboxList[i - 10].BackColor = Color.Red;
+                        norLabelCorrectionsList[i - 10].Text = member.Key;
+                        norLabelCorrectionsList[i - 10].Visible = true;
+                    }
+                }               
+                i++;
+            }
+
+        }
+
+        private void LockTextBoxes()
+        {
+            foreach(var member in norTextboxList)
+            {
+                member.ReadOnly = true;
+            }
+            foreach (var member in engTextboxList)
+            {
+                member.ReadOnly = true;
+            }
+        }
+
+        private void HideCorrectionLabels()
+        {
+            foreach(var member in norLabelCorrectionsList)
+            {
+                member.Visible = false;
+            }
+            foreach (var member in engLabelCorrectionsList)
+            {
+                member.Visible = false;
+            }
         }
     }
 }
