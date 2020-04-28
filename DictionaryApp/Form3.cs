@@ -8,16 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Editor radi tako sto pokupi sve rijeci iz dataGridViewera i napravi novi rijecnik koji sacuva u fajl.
+ * Dozvoljeno je sortiranje rijeci i editovanje. Osposobiti dodavanje i brisanje rijeci.
+ */
+
 namespace DictionaryApp
 {
     public partial class Form3 : Form
     {
-        private readonly Action _dictionarySave;
+        private Action _DictionaryLoad;
         private Dictionary<String, String> _NorwegianToEnglishDictionary;
         private Dictionary<String, String> _EnglishToNorwegianDictionary;
-        public Form3(Dictionary<String,String> NorwegianToEnglishDictionary, Dictionary<String, String> EnglishToNorwegianDictionary)
+        public Form3(Dictionary<String,String> NorwegianToEnglishDictionary, Dictionary<String, String> EnglishToNorwegianDictionary, Action DictionaryLoad)
         {
             InitializeComponent();
+
+            _DictionaryLoad = DictionaryLoad;
 
             _NorwegianToEnglishDictionary = NorwegianToEnglishDictionary;
             _EnglishToNorwegianDictionary = EnglishToNorwegianDictionary;
@@ -38,8 +45,8 @@ namespace DictionaryApp
                 norwegianToEnglishDictionaryNew.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
                 englishToNorwegianDictionaryNew.Add(row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString());
             }
-            //Kako sacuvati izmjene? Seljacki nacin: kopiraj save metodu u ovu funkciju i pozivaj je. Nisam mogao preko delegata nista.
-
+            Form1.DictionarySave(norwegianToEnglishDictionaryNew, englishToNorwegianDictionaryNew);
+            _DictionaryLoad();
         }
     }
 }

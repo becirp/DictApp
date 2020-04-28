@@ -91,10 +91,22 @@ namespace DictionaryApp
             ConsoleBox.Text += "\r\nDictionary saved to file.";
         }
 
+        public static void DictionarySave(Dictionary<String, String> _NorwegianToEnglishDictionary, Dictionary<String, String> _EnglishToNorwegianDictionary)
+        {
+            using (StreamWriter file = new StreamWriter("EnglishToNorwegianDictionary.txt"))
+                foreach (var entry in _EnglishToNorwegianDictionary)
+                    file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
+            using (StreamWriter file = new StreamWriter("NorwegianToEnglishDictionary.txt"))
+                foreach (var entry in _NorwegianToEnglishDictionary)
+                    file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
+        }
+
         private void DictionaryLoad()
         {
             try
             {
+                NorwegianToEnglishDictionary.Clear();
+                EnglishToNorwegianDictionary.Clear();
                 using (StreamReader sr = new StreamReader("EnglishToNorwegianDictionary.txt"))
                 {
                     string line;
@@ -150,7 +162,7 @@ namespace DictionaryApp
 
         private void viewDictionaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 dictViewerForm = new Form3(NorwegianToEnglishDictionary, EnglishToNorwegianDictionary);
+            Form3 dictViewerForm = new Form3(NorwegianToEnglishDictionary, EnglishToNorwegianDictionary, DictionaryLoad);
             dictViewerForm.Show();
         }
     }
