@@ -9,3 +9,4 @@ D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Debug\Dictio
 D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Debug\DictionaryApp.exe
 D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Debug\DictionaryApp.pdb
 D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Debug\DictionaryApp.Form2.resources
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Debug\DictionaryApp.Form3.resources

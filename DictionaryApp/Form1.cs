@@ -14,7 +14,8 @@ using System.Windows.Forms;
     U aplikaciju se ucitava najnovija verzija rjecnika prilikom pozivanja aplikacije. Testiranje podrazumijeva po 20 nasumicno odabranih parova Eng-Nor i Nor-Eng.
     2. Zasto dva rjecnika: da se moze koristiti contain metoda za brzo trazenje rijeci za obostrani prevod. Za kreiranje samog testa dovoljan jedan rijecnik.
     3. Ubaciti da se odredjena rijec moze naci i ispraviti, ako je neispravno ukucana u tekstbox i dodana u rijecnik. Napraviti preglednik rijecnika pomocu tabele.
-    4. Kad budes pravio Wix install, koristi za pocetak template koji daje wix plugin. Za pojedinacne postavke vidjeti kako je radjeno u DRM-APP. Provjeriti koji od
+    4. Podesiti dock za kontrole kad se povecava i smanjuje forma.
+    5. Kad budes pravio Wix install, koristi za pocetak template koji daje wix plugin. Za pojedinacne postavke vidjeti kako je radjeno u DRM-APP. Provjeriti koji od
     GUID-a je fiksan, vjerovatno onaj upgrade id.
      */
 namespace DictionaryApp
@@ -26,7 +27,7 @@ namespace DictionaryApp
         public Form1()
         {
             InitializeComponent();
-            LoadDictionary();
+            DictionaryLoad();
         }
 
         private void buttonAddWordPair_Click(object sender, EventArgs e)
@@ -71,8 +72,7 @@ namespace DictionaryApp
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Dictionary App\r\nVersion: " + Application.ProductVersion);
-            
+            MessageBox.Show("Dictionary App\r\nVersion: " + Application.ProductVersion);           
         }
 
         private void saveDictionaryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace DictionaryApp
             DictionarySave();
         }
 
-        private void DictionarySave()
+        public void DictionarySave()
         {
             using (StreamWriter file = new StreamWriter("EnglishToNorwegianDictionary.txt"))
                 foreach (var entry in EnglishToNorwegianDictionary)
@@ -91,7 +91,7 @@ namespace DictionaryApp
             ConsoleBox.Text += "\r\nDictionary saved to file.";
         }
 
-        private void LoadDictionary()
+        private void DictionaryLoad()
         {
             try
             {
@@ -146,6 +146,12 @@ namespace DictionaryApp
         {
             Form2 testForm = new Form2(NorwegianToEnglishDictionary);
             testForm.Show();
+        }
+
+        private void viewDictionaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 dictViewerForm = new Form3(NorwegianToEnglishDictionary, EnglishToNorwegianDictionary);
+            dictViewerForm.Show();
         }
     }
 }

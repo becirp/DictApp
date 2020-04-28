@@ -42,8 +42,6 @@ namespace DictionaryApp
             HideCorrectionLabels();
         }
 
-
-
         private void CreateTest()
         {
             int i = 0;

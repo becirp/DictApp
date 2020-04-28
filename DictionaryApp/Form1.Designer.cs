@@ -48,6 +48,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.viewDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -166,7 +167,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveDictionaryToolStripMenuItem,
-            this.loadDictionaryToolStripMenuItem});
+            this.loadDictionaryToolStripMenuItem,
+            this.viewDictionaryToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
             this.fileToolStripMenuItem.Text = "Options";
@@ -202,7 +204,7 @@
             // buttonTest
             // 
             this.buttonTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTest.Location = new System.Drawing.Point(447, 19);
+            this.buttonTest.Location = new System.Drawing.Point(453, 21);
             this.buttonTest.Name = "buttonTest";
             this.buttonTest.Size = new System.Drawing.Size(179, 40);
             this.buttonTest.TabIndex = 0;
@@ -244,16 +246,23 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(34, 406);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(699, 91);
+            this.groupBox3.Size = new System.Drawing.Size(699, 73);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quick Test";
+            // 
+            // viewDictionaryToolStripMenuItem
+            // 
+            this.viewDictionaryToolStripMenuItem.Name = "viewDictionaryToolStripMenuItem";
+            this.viewDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewDictionaryToolStripMenuItem.Text = "View Dictionary";
+            this.viewDictionaryToolStripMenuItem.Click += new System.EventHandler(this.viewDictionaryToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 509);
+            this.ClientSize = new System.Drawing.Size(800, 504);
             this.Controls.Add(this.ConsoleBox);
             this.Controls.Add(this.buttonAddWordPair);
             this.Controls.Add(this.menuStrip1);
@@ -298,6 +307,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ToolStripMenuItem viewDictionaryToolStripMenuItem;
     }
 }
 
