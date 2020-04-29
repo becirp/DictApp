@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 /*
  * Editor radi tako sto pokupi sve rijeci iz dataGridViewera i napravi novi rijecnik koji sacuva u fajl.
- * Dozvoljeno je sortiranje rijeci i editovanje. Osposobiti dodavanje i brisanje rijeci.
+ * Dozvoljeno je sortiranje rijeci i editovanje, ubacivanje redova i brisanje.
  */
 
 namespace DictionaryApp

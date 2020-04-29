@@ -42,13 +42,13 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonTest = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.viewDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,6 +175,7 @@
             // 
             // saveDictionaryToolStripMenuItem
             // 
+            this.saveDictionaryToolStripMenuItem.Enabled = false;
             this.saveDictionaryToolStripMenuItem.Name = "saveDictionaryToolStripMenuItem";
             this.saveDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.saveDictionaryToolStripMenuItem.Text = "Save Dictionary";
@@ -182,9 +183,17 @@
             // 
             // loadDictionaryToolStripMenuItem
             // 
+            this.loadDictionaryToolStripMenuItem.Enabled = false;
             this.loadDictionaryToolStripMenuItem.Name = "loadDictionaryToolStripMenuItem";
             this.loadDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.loadDictionaryToolStripMenuItem.Text = "Load Dictionary";
+            // 
+            // viewDictionaryToolStripMenuItem
+            // 
+            this.viewDictionaryToolStripMenuItem.Name = "viewDictionaryToolStripMenuItem";
+            this.viewDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.viewDictionaryToolStripMenuItem.Text = "View Dictionary";
+            this.viewDictionaryToolStripMenuItem.Click += new System.EventHandler(this.viewDictionaryToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -251,13 +260,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quick Test";
             // 
-            // viewDictionaryToolStripMenuItem
-            // 
-            this.viewDictionaryToolStripMenuItem.Name = "viewDictionaryToolStripMenuItem";
-            this.viewDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.viewDictionaryToolStripMenuItem.Text = "View Dictionary";
-            this.viewDictionaryToolStripMenuItem.Click += new System.EventHandler(this.viewDictionaryToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +272,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dictionary";

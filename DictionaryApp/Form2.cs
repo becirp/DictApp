@@ -11,7 +11,7 @@ using System.Windows.Forms;
 /* Kreiran iterator za citanje svih vrijednosti rijecnika. Napraviti random generator za 10 rijeci bez ponavljanja parova. */
 /* 1. Napravljen test. Poredi rijec iz labele sa ukucanom rijeci iz tekstboksa. Ako se poklapaju testirana rijec je tacno prevedena. Oznaciti tacne tekstboxe zelenom bojom,
  * a netacne crvenom. Ispisati skor od 20 bodova.
- * 2. Ubaciti da se moze prikazati tacno rjesenje, na rijecima koje su pogresno uradjene.
+ * 2. Ubaceno da se moze prikazati tacno rjesenje, na rijecima koje su pogresno uradjene.
  * 3. Za sada ne priznaje da zenski rod moze imati muski clan. Mora se znati da je neka rijec zenski rod.
  */
 

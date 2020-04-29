@@ -864,6 +864,7 @@
             this.Controls.Add(this.textBoxNor2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Word Test";

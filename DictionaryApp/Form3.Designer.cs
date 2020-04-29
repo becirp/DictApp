@@ -48,6 +48,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,6 +101,7 @@
             // 
             // buttonApplyChanges
             // 
+            this.buttonApplyChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonApplyChanges.Location = new System.Drawing.Point(466, 666);
             this.buttonApplyChanges.Name = "buttonApplyChanges";
             this.buttonApplyChanges.Size = new System.Drawing.Size(115, 23);
@@ -108,6 +112,7 @@
             // 
             // buttonDiscardChanges
             // 
+            this.buttonDiscardChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDiscardChanges.Location = new System.Drawing.Point(587, 666);
             this.buttonDiscardChanges.Name = "buttonDiscardChanges";
             this.buttonDiscardChanges.Size = new System.Drawing.Size(110, 23);
