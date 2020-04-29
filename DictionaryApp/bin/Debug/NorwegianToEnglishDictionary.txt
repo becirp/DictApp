@@ -127,7 +127,7 @@
 [å begynne_to start]
 [å gå på Internett_to surf the internet]
 [å ta_to take]
-[å wåkne_to wake up]
+[å våkne_to wake up]
 [å ville_to want]
 [i dag_today]
 [sant_true]

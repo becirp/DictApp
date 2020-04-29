@@ -157,12 +157,18 @@ namespace DictionaryApp
         private void buttonCheckTest_Click(object sender, EventArgs e)
         {
             int i = 0;
+            int scoreMax = 20;
+            int score = 0;
             LockTextBoxes();
             foreach(var member in randomDict)
             {
                 if (i < 10)
                 {
-                    if (member.Value == engTextboxList[i].Text) engTextboxList[i].BackColor = Color.Green;
+                    if (member.Value == engTextboxList[i].Text)
+                    {
+                        engTextboxList[i].BackColor = Color.Green;
+                        score++;
+                    }
                     else if (member.Value != engTextboxList[i].Text)
                     {
                         engTextboxList[i].BackColor = Color.Red;
@@ -172,7 +178,11 @@ namespace DictionaryApp
                 }
                 else if (i >= 10)
                 {
-                    if (member.Key == norTextboxList[i - 10].Text) norTextboxList[i - 10].BackColor = Color.Green;
+                    if (member.Key == norTextboxList[i - 10].Text)
+                    {
+                        norTextboxList[i - 10].BackColor = Color.Green;
+                        score++;
+                    }
                     else if (member.Key != norTextboxList[i - 10].Text)
                     {
                         norTextboxList[i - 10].BackColor = Color.Red;
@@ -182,7 +192,8 @@ namespace DictionaryApp
                 }               
                 i++;
             }
-
+            labelScore.Text = score.ToString() + "/" + scoreMax.ToString();
+            buttonCheckTest.Enabled = false;
         }
 
         private void LockTextBoxes()
