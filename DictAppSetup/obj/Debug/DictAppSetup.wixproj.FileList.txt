@@ -1,0 +1,7 @@
+obj\Debug\Product.wixobj
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\cab1.cab
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\DictAppSetup.msi
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\DictAppSetup.wixpdb
+obj\Debug\DictAppSetup.wixproj.BindContentsFileListnull.txt
+obj\Debug\DictAppSetup.wixproj.BindOutputsFileListnull.txt
+obj\Debug\DictAppSetup.wixproj.BindBuiltOutputsFileListnull.txt

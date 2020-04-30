@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Dictionary App Setup" Language="1033" Version="1.0.0.0" Manufacturer="Peco Software" UpgradeCode="0136aa38-bdd1-42c5-995d-47d2722c3e88">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Icon Id="icon.ico" SourceFile="..\DictionaryApp\bin\Debug\icon.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    <UIRef Id="WixUI_Minimal"/>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="Dictionary App Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="CMP_DesktopShortcut" />
+      <ComponentRef Id="CMP_ProgramMenuShortcuts"/>
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="DictAppSetup" />
+			</Directory>
+      <Directory Id="DesktopFolder" Name="Desktop"></Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MyProgramMenuShortcuts" Name="DictionaryApp"/>
+      </Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="CMP_ExeFile"
+                 Guid="*">
+        <File Id="FILE_ExeFile"
+              KeyPath="yes"
+              Source="..\DictionaryApp\bin\Debug\DictionaryApp.exe"/>
+      </Component>
+      <Component Id="CMP_NorTxtFile"
+                 Guid="*">
+        <File Id="FILE_NorTxtFile"
+              KeyPath="yes"
+              Source="..\DictionaryApp\bin\Debug\NorwegianToEnglishDictionary.txt"/>
+      </Component>
+      <Component Id="CMP_EngTxtFile"
+                 Guid="*">
+        <File Id="FILE_EngTxtFile"
+              KeyPath="yes"
+              Source="..\DictionaryApp\bin\Debug\EnglishToNorwegianDictionary.txt"/>
+      </Component>
+		</ComponentGroup>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="CMP_DesktopShortcut"
+                 Guid="*">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="DictionaryApp"
+                  Description="DictionaryApp Launcher"
+                  Target="[INSTALLFOLDER]DictionaryApp.exe"
+                  Icon="icon.ico"/>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue
+            Root="HKCU"
+            Key="Software/DictionaryApp"
+            Name="installed"
+            Type="integer"
+            Value="1"
+            KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MyProgramMenuShortcuts">
+      <Component Id="CMP_ProgramMenuShortcuts"
+                 Guid="*">
+        <Shortcut Id="ApplicationProgramMenuShortcut"
+                  Name="DictionaryApp"
+                  Description="DictionaryApp Launcher"
+                  Target="[INSTALLFOLDER]DictionaryApp.exe"
+                  Icon="icon.ico"/>
+        <Shortcut Id="UninstallShortcut"
+                  Name="Uninstall DictionaryApp"
+                  Description="Uninstalls DictionaryApp"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]" />
+        <RemoveFolder Id="RemoveMyShortcutsDir"
+                      On="uninstall" />
+        <RegistryValue Root="HKCU"
+                       Key="Software\Microsoft\DRMApp"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+</Wix>

@@ -1,0 +1,3 @@
+..\DictionaryApp\bin\Debug\EnglishToNorwegianDictionary.txt
+..\DictionaryApp\bin\Debug\DictionaryApp.exe
+..\DictionaryApp\bin\Debug\NorwegianToEnglishDictionary.txt

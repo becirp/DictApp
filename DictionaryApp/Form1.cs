@@ -15,8 +15,8 @@ using System.Windows.Forms;
     2. Zasto dva rjecnika: da se moze koristiti contain metoda za brzo trazenje rijeci za obostrani prevod. Za kreiranje samog testa dovoljan jedan rijecnik.
     3. Ubaceno da se odredjena rijec moze naci i ispraviti, ako je neispravno ukucana u tekstbox i dodana u rijecnik. Napraviti preglednik rijecnika pomocu tabele.
     4. Podeseno dock za kontrole kad se povecava i smanjuje forma.
-    5. Kad budes pravio Wix install, koristi za pocetak template koji daje wix plugin. Za pojedinacne postavke vidjeti kako je radjeno u DRM-APP. Provjeriti koji od
-    GUID-a je fiksan, vjerovatno onaj upgrade id.
+    5. Wix install: ne radi citanje dict fajla kad se on cuva na C/Program Files. Potrebno je pokrenuti aplikaciju sa administratorskim pravima iz instalacijskog foldera. Preko ikone ili
+    bez admin prava aplikacija ne radi korektno.
      */
 namespace DictionaryApp
 {    
@@ -72,7 +72,7 @@ namespace DictionaryApp
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Dictionary App\r\nVersion: " + Application.ProductVersion);           
+            MessageBox.Show("Version: " + Application.ProductVersion + " - April, 2020\r\n" + "Auto");           
         }
 
         private void saveDictionaryToolStripMenuItem_Click(object sender, EventArgs e)

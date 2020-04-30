@@ -5,16 +5,30 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryApp", "DictionaryApp\DictionaryApp.csproj", "{608A8669-F251-4AF7-82AA-A6BCEEA8609D}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "DictAppSetup", "DictAppSetup\DictAppSetup.wixproj", "{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Debug|x86.Build.0 = Debug|Any CPU
 		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Release|x86.ActiveCfg = Release|Any CPU
+		{608A8669-F251-4AF7-82AA-A6BCEEA8609D}.Release|x86.Build.0 = Release|Any CPU
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Debug|x86.ActiveCfg = Debug|x86
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Debug|x86.Build.0 = Debug|x86
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Release|Any CPU.ActiveCfg = Release|x86
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Release|x86.ActiveCfg = Release|x86
+		{7DA9DC1F-F468-432F-A796-9C2ACE1E9BDE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

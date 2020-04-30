@@ -49,6 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,7 +176,6 @@
             // 
             // saveDictionaryToolStripMenuItem
             // 
-            this.saveDictionaryToolStripMenuItem.Enabled = false;
             this.saveDictionaryToolStripMenuItem.Name = "saveDictionaryToolStripMenuItem";
             this.saveDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.saveDictionaryToolStripMenuItem.Text = "Save Dictionary";
@@ -183,7 +183,6 @@
             // 
             // loadDictionaryToolStripMenuItem
             // 
-            this.loadDictionaryToolStripMenuItem.Enabled = false;
             this.loadDictionaryToolStripMenuItem.Name = "loadDictionaryToolStripMenuItem";
             this.loadDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.loadDictionaryToolStripMenuItem.Text = "Load Dictionary";
@@ -206,7 +205,7 @@
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.versionToolStripMenuItem.Text = "Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -251,6 +250,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.buttonTest);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(34, 406);
@@ -259,6 +259,15 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quick Test";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(40, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(227, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Note: Go to Options to edit dictionary.";
             // 
             // Form1
             // 
@@ -271,6 +280,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -283,6 +293,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +322,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ToolStripMenuItem viewDictionaryToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
     }
 }
 

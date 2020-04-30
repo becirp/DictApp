@@ -29,11 +29,18 @@ namespace DictionaryApp
             _NorwegianToEnglishDictionary = NorwegianToEnglishDictionary;
             _EnglishToNorwegianDictionary = EnglishToNorwegianDictionary;
 
-            foreach (var member in NorwegianToEnglishDictionary)
+            fillTableWithWords();
+
+            
+        }
+
+        private void fillTableWithWords()
+        {
+            foreach (var member in _NorwegianToEnglishDictionary)
             {
                 dataGridView1.Rows.Add(member.Key, member.Value);
             }
-            dataGridView1.Sort(dataGridView1.Columns["NorwegianWords"], ListSortDirection.Ascending);            
+            dataGridView1.Sort(dataGridView1.Columns["NorwegianWords"], ListSortDirection.Ascending);
         }
 
         private void buttonApplyChanges_Click(object sender, EventArgs e)
@@ -85,6 +92,8 @@ namespace DictionaryApp
             row.Cells[1].Value = " ";
             dataGridView1.Rows.Add(row);
             dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
+            dataGridView1.Rows[dataGridView1.RowCount - 1].Selected = true;
+            dataGridView1.BeginEdit(true);
         }
     }
 }
