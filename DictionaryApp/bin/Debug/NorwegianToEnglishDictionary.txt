@@ -145,3 +145,4 @@
 [ved siden av_next to]
 [vi_we]
 [ost_cheese]
+[etter_after]

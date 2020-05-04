@@ -34,10 +34,8 @@
             this.textBoxNorwegian = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonTranslate = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.ConsoleBox = new System.Windows.Forms.RichTextBox();
             this.textBoxUnknownWord = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +48,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,20 +113,10 @@
             this.buttonTranslate.UseVisualStyleBackColor = true;
             this.buttonTranslate.Click += new System.EventHandler(this.buttonTranslate_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Console:";
-            // 
             // ConsoleBox
             // 
             this.ConsoleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsoleBox.Location = new System.Drawing.Point(281, 256);
+            this.ConsoleBox.Location = new System.Drawing.Point(139, 80);
             this.ConsoleBox.Name = "ConsoleBox";
             this.ConsoleBox.ReadOnly = true;
             this.ConsoleBox.Size = new System.Drawing.Size(385, 115);
@@ -141,16 +130,6 @@
             this.textBoxUnknownWord.Name = "textBoxUnknownWord";
             this.textBoxUnknownWord.Size = new System.Drawing.Size(143, 29);
             this.textBoxUnknownWord.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(160, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 24);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Word:";
             // 
             // menuStrip1
             // 
@@ -176,6 +155,7 @@
             // 
             // saveDictionaryToolStripMenuItem
             // 
+            this.saveDictionaryToolStripMenuItem.Enabled = false;
             this.saveDictionaryToolStripMenuItem.Name = "saveDictionaryToolStripMenuItem";
             this.saveDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.saveDictionaryToolStripMenuItem.Text = "Save Dictionary";
@@ -183,6 +163,7 @@
             // 
             // loadDictionaryToolStripMenuItem
             // 
+            this.loadDictionaryToolStripMenuItem.Enabled = false;
             this.loadDictionaryToolStripMenuItem.Name = "loadDictionaryToolStripMenuItem";
             this.loadDictionaryToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.loadDictionaryToolStripMenuItem.Text = "Load Dictionary";
@@ -205,7 +186,7 @@
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
             this.versionToolStripMenuItem.Text = "Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -236,10 +217,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBoxUnknownWord);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.buttonTranslate);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.ConsoleBox);
+            this.groupBox2.Controls.Add(this.textBoxUnknownWord);
+            this.groupBox2.Controls.Add(this.buttonTranslate);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(34, 182);
             this.groupBox2.Name = "groupBox2";
@@ -263,18 +244,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 35);
+            this.label5.Location = new System.Drawing.Point(52, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "Note: Go to Options to edit dictionary.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(170, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Note: Norwegian or English";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.ConsoleBox);
             this.Controls.Add(this.buttonAddWordPair);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
@@ -307,10 +296,8 @@
         private System.Windows.Forms.TextBox textBoxNorwegian;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonTranslate;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox ConsoleBox;
         private System.Windows.Forms.TextBox textBoxUnknownWord;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveDictionaryToolStripMenuItem;
@@ -323,6 +310,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ToolStripMenuItem viewDictionaryToolStripMenuItem;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -1,3 +1,2 @@
-D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\cab1.cab
 D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\DictAppSetup.msi
 D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictAppSetup\bin\Debug\DictAppSetup.wixpdb

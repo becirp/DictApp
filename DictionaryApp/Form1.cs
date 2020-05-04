@@ -15,8 +15,9 @@ using System.Windows.Forms;
     2. Zasto dva rjecnika: da se moze koristiti contain metoda za brzo trazenje rijeci za obostrani prevod. Za kreiranje samog testa dovoljan jedan rijecnik.
     3. Ubaceno da se odredjena rijec moze naci i ispraviti, ako je neispravno ukucana u tekstbox i dodana u rijecnik. Napraviti preglednik rijecnika pomocu tabele.
     4. Podeseno dock za kontrole kad se povecava i smanjuje forma.
-    5. Wix install: ne radi citanje dict fajla kad se on cuva na C/Program Files. Potrebno je pokrenuti aplikaciju sa administratorskim pravima iz instalacijskog foldera. Preko ikone ili
-    bez admin prava aplikacija ne radi korektno.
+    5. Wix install: ne radi citanje dict fajla kad se on cuva na C:\Program Files. Potrebno je pokrenuti aplikaciju sa administratorskim pravima iz instalacijskog foldera. Preko ikone ili
+    bez admin prava aplikacija ne radi korektno. U biti sljedece sto ce se probati jeste da na target masini cuva ove txt fajlove u public folderu. To bi trebalo pomoci oko admin prava.
+    Ne mogu instalirati u public. Ne mogu nigdje instalirat, a da imam pristup tom fajlu nakon instalacije. Provjeriti oko ovih eksternih podataka sta se standardno radi.
      */
 namespace DictionaryApp
 {    
@@ -82,10 +83,15 @@ namespace DictionaryApp
 
         public void DictionarySave()
         {
-            using (StreamWriter file = new StreamWriter("EnglishToNorwegianDictionary.txt"))
+            //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+            //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+            //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+            string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            using (StreamWriter file = new StreamWriter(dictPathEng))
                 foreach (var entry in EnglishToNorwegianDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
-            using (StreamWriter file = new StreamWriter("NorwegianToEnglishDictionary.txt"))
+            using (StreamWriter file = new StreamWriter(dictPathNor))
                 foreach (var entry in NorwegianToEnglishDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
             ConsoleBox.Text += "\r\nDictionary saved to file.";
@@ -93,10 +99,15 @@ namespace DictionaryApp
 
         public static void DictionarySave(Dictionary<String, String> _NorwegianToEnglishDictionary, Dictionary<String, String> _EnglishToNorwegianDictionary)
         {
-            using (StreamWriter file = new StreamWriter("EnglishToNorwegianDictionary.txt"))
+            //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+            //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+            //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+            string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            using (StreamWriter file = new StreamWriter(dictPathEng))
                 foreach (var entry in _EnglishToNorwegianDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
-            using (StreamWriter file = new StreamWriter("NorwegianToEnglishDictionary.txt"))
+            using (StreamWriter file = new StreamWriter(dictPathNor))
                 foreach (var entry in _NorwegianToEnglishDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
         }
@@ -107,7 +118,12 @@ namespace DictionaryApp
             {
                 NorwegianToEnglishDictionary.Clear();
                 EnglishToNorwegianDictionary.Clear();
-                using (StreamReader sr = new StreamReader("EnglishToNorwegianDictionary.txt"))
+                //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+                //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+                //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+                string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
+                string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+                using (StreamReader sr = new StreamReader(dictPathEng))
                 {
                     string line;
                     string engWord, norWord;
@@ -126,7 +142,7 @@ namespace DictionaryApp
                         }                       
                     }
                 }
-                using (StreamReader sr = new StreamReader("NorwegianToEnglishDictionary.txt"))
+                using (StreamReader sr = new StreamReader(dictPathNor))
                 {
                     string line;
                     string engWord, norWord;

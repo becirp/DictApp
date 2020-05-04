@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="Dictionary App Setup" Language="1033" Version="1.0.0.0" Manufacturer="Peco Software" UpgradeCode="0136aa38-bdd1-42c5-995d-47d2722c3e88">
+	<Product Id="*" Name="Dictionary App" Language="1033" Version="1.0.0.0" Manufacturer="Peco Software" UpgradeCode="0136aa38-bdd1-42c5-995d-47d2722c3e88">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <Icon Id="icon.ico" SourceFile="..\DictionaryApp\bin\Debug\icon.ico"/>
@@ -8,7 +8,7 @@
     <UIRef Id="WixUI_Minimal"/>
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MediaTemplate EmbedCab="yes"/>
 
 		<Feature Id="ProductFeature" Title="Dictionary App Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
@@ -20,72 +20,75 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="DictAppSetup" />
+				<Directory Id="INSTALLFOLDER" Name="Dictionary App"/>
 			</Directory>
       <Directory Id="DesktopFolder" Name="Desktop"></Directory>
       <Directory Id="ProgramMenuFolder">
-        <Directory Id="MyProgramMenuShortcuts" Name="DictionaryApp"/>
+        <Directory Id="MyProgramMenuShortcuts" Name="DRM App"/>
       </Directory>
 		</Directory>
-	</Fragment>
+
+    <SetDirectory Id="INSTALLFOLDER" Value="[WindowsVolume]Dictionary App" />
+
+  </Fragment>
 
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="CMP_ExeFile"
-                 Guid="*">
+                 Guid="{8F1B97A0-A51E-46E4-AE54-643C0E74914A}">
         <File Id="FILE_ExeFile"
               KeyPath="yes"
               Source="..\DictionaryApp\bin\Debug\DictionaryApp.exe"/>
       </Component>
       <Component Id="CMP_NorTxtFile"
-                 Guid="*">
+           Guid="{4D45EBDE-B293-49C4-9F08-CC184F14C655}">
         <File Id="FILE_NorTxtFile"
               KeyPath="yes"
               Source="..\DictionaryApp\bin\Debug\NorwegianToEnglishDictionary.txt"/>
       </Component>
       <Component Id="CMP_EngTxtFile"
-                 Guid="*">
+                 Guid="{11F873ED-6F50-4130-B252-4F51C43187B2}">
         <File Id="FILE_EngTxtFile"
               KeyPath="yes"
               Source="..\DictionaryApp\bin\Debug\EnglishToNorwegianDictionary.txt"/>
       </Component>
-		</ComponentGroup>
-
+    </ComponentGroup>
     <DirectoryRef Id="DesktopFolder">
       <Component Id="CMP_DesktopShortcut"
                  Guid="*">
         <Shortcut Id="ApplicationDesktopShortcut"
-                  Name="DictionaryApp"
-                  Description="DictionaryApp Launcher"
+                  Name="Dictionary App"
+                  Description="Dictionary Application Launcher"
                   Target="[INSTALLFOLDER]DictionaryApp.exe"
                   Icon="icon.ico"/>
         <RemoveFolder Id="DesktopFolder" On="uninstall"/>
         <RegistryValue
             Root="HKCU"
-            Key="Software/DictionaryApp"
+            Key="Software\PecoSoftware\DictionaryApp"
             Name="installed"
             Type="integer"
             Value="1"
             KeyPath="yes"/>
       </Component>
     </DirectoryRef>
+    
     <DirectoryRef Id="MyProgramMenuShortcuts">
       <Component Id="CMP_ProgramMenuShortcuts"
-                 Guid="*">
+                 Guid="{123598ED-52C3-4335-BC2C-8E2BEEC24B95}">
         <Shortcut Id="ApplicationProgramMenuShortcut"
-                  Name="DictionaryApp"
-                  Description="DictionaryApp Launcher"
+                  Name="Dictionary App"
+                  Description="Dictionary Application Launcher"
                   Target="[INSTALLFOLDER]DictionaryApp.exe"
                   Icon="icon.ico"/>
         <Shortcut Id="UninstallShortcut"
-                  Name="Uninstall DictionaryApp"
-                  Description="Uninstalls DictionaryApp"
+                  Name="Uninstall Dictionary App"
+                  Description="Uninstalls Dictionary App"
                   Target="[System64Folder]msiexec.exe"
                   Arguments="/x [ProductCode]" />
         <RemoveFolder Id="RemoveMyShortcutsDir"
                       On="uninstall" />
         <RegistryValue Root="HKCU"
-                       Key="Software\Microsoft\DRMApp"
+                       Key="Software\PecoSoftware\DictionaryApp"
                        Name="installed"
                        Type="integer"
                        Value="1"
