@@ -6,10 +6,11 @@
     <Icon Id="icon.ico" SourceFile="..\DictionaryApp\bin\Debug\icon.ico"/>
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
     <UIRef Id="WixUI_Minimal"/>
+    <WixVariable Id="WixUILicenseRtf" Value="..\DictionaryApp\bin\Debug\LICENSE.rtf" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes"/>
-
+    
 		<Feature Id="ProductFeature" Title="Dictionary App Setup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="CMP_DesktopShortcut" />

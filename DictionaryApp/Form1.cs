@@ -83,11 +83,9 @@ namespace DictionaryApp
 
         public void DictionarySave()
         {
-            //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
-            //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-            //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
-            string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-            string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            string dictRootDir = Path.GetPathRoot(Environment.SystemDirectory);
+            string dictPathEng = dictRootDir + "Dictionary App\\EnglishToNorwegianDictionary.txt";
+            string dictPathNor = dictRootDir + "Dictionary App\\NorwegianToEnglishDictionary.txt";
             using (StreamWriter file = new StreamWriter(dictPathEng))
                 foreach (var entry in EnglishToNorwegianDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
@@ -99,11 +97,9 @@ namespace DictionaryApp
 
         public static void DictionarySave(Dictionary<String, String> _NorwegianToEnglishDictionary, Dictionary<String, String> _EnglishToNorwegianDictionary)
         {
-            //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
-            //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-            //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
-            string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-            string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+            string dictRootDir = Path.GetPathRoot(Environment.SystemDirectory);
+            string dictPathEng = dictRootDir + "Dictionary App\\EnglishToNorwegianDictionary.txt";
+            string dictPathNor = dictRootDir + "Dictionary App\\NorwegianToEnglishDictionary.txt";
             using (StreamWriter file = new StreamWriter(dictPathEng))
                 foreach (var entry in _EnglishToNorwegianDictionary)
                     file.WriteLine("[{0}_{1}]", entry.Key, entry.Value);
@@ -118,11 +114,9 @@ namespace DictionaryApp
             {
                 NorwegianToEnglishDictionary.Clear();
                 EnglishToNorwegianDictionary.Clear();
-                //string publicDocumentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
-                //string dictPathEng = publicDocumentsPath + "\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-                //string dictPathNor = publicDocumentsPath + "\\Dictionary App\\NorwegianToEnglishDictionary.txt";
-                string dictPathEng = "C:\\Dictionary App\\EnglishToNorwegianDictionary.txt";
-                string dictPathNor = "C:\\Dictionary App\\NorwegianToEnglishDictionary.txt";
+                string dictRootDir = Path.GetPathRoot(Environment.SystemDirectory);
+                string dictPathEng = dictRootDir + "Dictionary App\\EnglishToNorwegianDictionary.txt";
+                string dictPathNor = dictRootDir + "Dictionary App\\NorwegianToEnglishDictionary.txt";
                 using (StreamReader sr = new StreamReader(dictPathEng))
                 {
                     string line;

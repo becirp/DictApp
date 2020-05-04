@@ -35,12 +35,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NorwegianWords = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnglishWords = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonApplyChanges = new System.Windows.Forms.Button();
             this.buttonDiscardChanges = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,36 @@
             this.EnglishWords.HeaderText = "English Words";
             this.EnglishWords.Name = "EnglishWords";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addRowToolStripMenuItem,
+            this.editRowToolStripMenuItem,
+            this.removeRowToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 70);
+            // 
+            // addRowToolStripMenuItem
+            // 
+            this.addRowToolStripMenuItem.Name = "addRowToolStripMenuItem";
+            this.addRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.addRowToolStripMenuItem.Text = "Add Row";
+            this.addRowToolStripMenuItem.Click += new System.EventHandler(this.addRowToolStripMenuItem_Click);
+            // 
+            // editRowToolStripMenuItem
+            // 
+            this.editRowToolStripMenuItem.Name = "editRowToolStripMenuItem";
+            this.editRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.editRowToolStripMenuItem.Text = "Edit";
+            this.editRowToolStripMenuItem.Click += new System.EventHandler(this.editRowToolStripMenuItem_Click);
+            // 
+            // removeRowToolStripMenuItem
+            // 
+            this.removeRowToolStripMenuItem.Name = "removeRowToolStripMenuItem";
+            this.removeRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.removeRowToolStripMenuItem.Text = "Remove Row";
+            this.removeRowToolStripMenuItem.Click += new System.EventHandler(this.removeRowToolStripMenuItem_Click);
+            // 
             // buttonApplyChanges
             // 
             this.buttonApplyChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,41 +152,21 @@
             this.buttonDiscardChanges.UseVisualStyleBackColor = true;
             this.buttonDiscardChanges.Click += new System.EventHandler(this.buttonDiscardChanges_Click);
             // 
-            // contextMenuStrip1
+            // label5
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addRowToolStripMenuItem,
-            this.editRowToolStripMenuItem,
-            this.removeRowToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 70);
-            // 
-            // editRowToolStripMenuItem
-            // 
-            this.editRowToolStripMenuItem.Name = "editRowToolStripMenuItem";
-            this.editRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.editRowToolStripMenuItem.Text = "Edit";
-            this.editRowToolStripMenuItem.Click += new System.EventHandler(this.editRowToolStripMenuItem_Click);
-            // 
-            // addRowToolStripMenuItem
-            // 
-            this.addRowToolStripMenuItem.Name = "addRowToolStripMenuItem";
-            this.addRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.addRowToolStripMenuItem.Text = "Add Row";
-            this.addRowToolStripMenuItem.Click += new System.EventHandler(this.addRowToolStripMenuItem_Click);
-            // 
-            // removeRowToolStripMenuItem
-            // 
-            this.removeRowToolStripMenuItem.Name = "removeRowToolStripMenuItem";
-            this.removeRowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.removeRowToolStripMenuItem.Text = "Remove Row";
-            this.removeRowToolStripMenuItem.Click += new System.EventHandler(this.removeRowToolStripMenuItem_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 671);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(146, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Note: Right click to edit rows.";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 703);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDiscardChanges);
             this.Controls.Add(this.buttonApplyChanges);
             this.Controls.Add(this.dataGridView1);
@@ -165,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,5 +191,6 @@
         private System.Windows.Forms.ToolStripMenuItem editRowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeRowToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
     }
 }
