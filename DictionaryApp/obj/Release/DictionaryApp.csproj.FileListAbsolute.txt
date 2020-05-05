@@ -1,0 +1,12 @@
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\bin\Release\DictionaryApp.exe.config
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\bin\Release\DictionaryApp.exe
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\bin\Release\DictionaryApp.pdb
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.csprojAssemblyReference.cache
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.Form1.resources
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.Form2.resources
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.Form3.resources
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.Properties.Resources.resources
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.csproj.GenerateResource.cache
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.csproj.CoreCompileInputs.cache
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.exe
+D:\Workspace\VisualStudio_Workspace\DictionaryApp\DictionaryApp\obj\Release\DictionaryApp.pdb

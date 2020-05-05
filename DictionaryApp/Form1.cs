@@ -73,7 +73,7 @@ namespace DictionaryApp
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Version: " + Application.ProductVersion + " - April, 2020\r\n" + "Auto");           
+            MessageBox.Show("Version: " + Application.ProductVersion + " - April, 2020\r\n" + "Author: Becir Peco");           
         }
 
         private void saveDictionaryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace DictionaryApp
                 }
                 ConsoleBox.Text = "Dictionary Loaded.";
             }
-            catch(Exception e)
+            catch
             {
                 ConsoleBox.Text = "Dictionary file couldn't be read.\r\nSave new dictionary.";
                 //ConsoleBox.Text = e.Message;

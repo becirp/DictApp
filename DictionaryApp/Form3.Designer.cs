@@ -42,6 +42,8 @@
             this.buttonApplyChanges = new System.Windows.Forms.Button();
             this.buttonDiscardChanges = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +163,18 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Note: Right click to edit rows.";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 2000;
+            this.toolTip1.ReshowDelay = 100;
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.AutoPopDelay = 5000;
+            this.toolTip2.InitialDelay = 2000;
+            this.toolTip2.ReshowDelay = 100;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem addRowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeRowToolStripMenuItem;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

@@ -888,8 +888,7 @@
 
         }
 
-        #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        #endregion       
         private System.Windows.Forms.Button buttonCheckTest;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

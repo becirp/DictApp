@@ -24,14 +24,15 @@ namespace DictionaryApp
         {
             InitializeComponent();
 
+            toolTip1.SetToolTip(buttonDiscardChanges, "Discard all changes made before clicking Apply Changes, and then close this window.");
+            toolTip2.SetToolTip(buttonApplyChanges, "Add all rows from the table to the actual dictionary.");
+
             _DictionaryLoad = DictionaryLoad;
 
             _NorwegianToEnglishDictionary = NorwegianToEnglishDictionary;
             _EnglishToNorwegianDictionary = EnglishToNorwegianDictionary;
 
-            fillTableWithWords();
-
-            
+            fillTableWithWords();            
         }
 
         private void fillTableWithWords()
@@ -46,17 +47,31 @@ namespace DictionaryApp
         private void buttonApplyChanges_Click(object sender, EventArgs e)
         {
             Dictionary<String, String> norwegianToEnglishDictionaryNew = new Dictionary<String, String>();
-            Dictionary<String, String> englishToNorwegianDictionaryNew = new Dictionary<String, String>(); 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            Dictionary<String, String> englishToNorwegianDictionaryNew = new Dictionary<String, String>();
+            try
             {
-                if((row.Cells[0].Value != null) || (row.Cells[1].Value != null))
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    norwegianToEnglishDictionaryNew.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
-                    englishToNorwegianDictionaryNew.Add(row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString());
+                    if((row.Cells[0].Value != null) && (row.Cells[0].Value.ToString() != " ") && (row.Cells[1].Value != null) && (row.Cells[1].Value.ToString() != " "))
+                    {
+                        if(!norwegianToEnglishDictionaryNew.ContainsKey(row.Cells[0].Value.ToString()))
+                            norwegianToEnglishDictionaryNew.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
+                        if(!englishToNorwegianDictionaryNew.ContainsKey(row.Cells[1].Value.ToString()))
+                            englishToNorwegianDictionaryNew.Add(row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("There are empty rows, please delete them or fill in empty cells.");
+                    }
                 }
+                Form1.DictionarySave(norwegianToEnglishDictionaryNew, englishToNorwegianDictionaryNew);
+                _DictionaryLoad();
             }
-            Form1.DictionarySave(norwegianToEnglishDictionaryNew, englishToNorwegianDictionaryNew);
-            _DictionaryLoad();
+            catch(Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            
         }
 
         private void editRowToolStripMenuItem_Click(object sender, EventArgs e)
