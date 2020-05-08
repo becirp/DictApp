@@ -15,8 +15,7 @@ using System.Windows.Forms;
  * 3. Za sada ne priznaje da zenski rod moze imati muski clan. Mora se znati da je neka rijec zenski rod.
  */
 
-/* Opcionalna kasnija prosirenja: Napraviti da se vodi evidencija skorova uzetih u toku vremena; Staviti opcionalno vremensko ogranicenje na test; Provjeriti osjetljivost na kapitalizaciju rijeci;
- * Ubaciti audio fajlove za teske rijeci - ovo bi vrlo vjerovatno trazilo da se rijec pretvori u objekat klase sa atributima engWord, norWord, audio, explanation itd.;
+/* Opcionalna kasnija prosirenja: Napraviti da se vodi evidencija skorova uzetih u toku vremena; Staviti opcionalno vremensko ogranicenje na test; Brojac rijeci;
  */
 namespace DictionaryApp
 {

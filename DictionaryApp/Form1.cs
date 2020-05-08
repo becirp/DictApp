@@ -14,10 +14,7 @@ using System.Windows.Forms;
     U aplikaciju se ucitava najnovija verzija rjecnika prilikom pozivanja aplikacije. Testiranje podrazumijeva po 20 nasumicno odabranih parova Eng-Nor i Nor-Eng.
     2. Zasto dva rjecnika: da se moze koristiti contain metoda za brzo trazenje rijeci za obostrani prevod. Za kreiranje samog testa dovoljan jedan rijecnik.
     3. Ubaceno da se odredjena rijec moze naci i ispraviti, ako je neispravno ukucana u tekstbox i dodana u rijecnik. Napraviti preglednik rijecnika pomocu tabele.
-    4. Podeseno dock za kontrole kad se povecava i smanjuje forma.
-    5. Wix install: ne radi citanje dict fajla kad se on cuva na C:\Program Files. Potrebno je pokrenuti aplikaciju sa administratorskim pravima iz instalacijskog foldera. Preko ikone ili
-    bez admin prava aplikacija ne radi korektno. U biti sljedece sto ce se probati jeste da na target masini cuva ove txt fajlove u public folderu. To bi trebalo pomoci oko admin prava.
-    Ne mogu instalirati u public. Ne mogu nigdje instalirat, a da imam pristup tom fajlu nakon instalacije. Provjeriti oko ovih eksternih podataka sta se standardno radi.
+    4. Wix install kreiran. Instalira aplikaciju na C:\
      */
 namespace DictionaryApp
 {    

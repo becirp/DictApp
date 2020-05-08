@@ -46,32 +46,40 @@ namespace DictionaryApp
 
         private void buttonApplyChanges_Click(object sender, EventArgs e)
         {
+            bool noEmptyCells = true;
             Dictionary<String, String> norwegianToEnglishDictionaryNew = new Dictionary<String, String>();
             Dictionary<String, String> englishToNorwegianDictionaryNew = new Dictionary<String, String>();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if ((row.Cells[0].Value == null) || (row.Cells[0].Value.ToString() == " ") || (row.Cells[1].Value == null) || (row.Cells[1].Value.ToString() == " "))
+                    noEmptyCells = false;
+            }
+
             try
             {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                if (noEmptyCells)
                 {
-                    if((row.Cells[0].Value != null) && (row.Cells[0].Value.ToString() != " ") && (row.Cells[1].Value != null) && (row.Cells[1].Value.ToString() != " "))
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        if(!norwegianToEnglishDictionaryNew.ContainsKey(row.Cells[0].Value.ToString()))
+                        if (!norwegianToEnglishDictionaryNew.ContainsKey(row.Cells[0].Value.ToString()))
                             norwegianToEnglishDictionaryNew.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
-                        if(!englishToNorwegianDictionaryNew.ContainsKey(row.Cells[1].Value.ToString()))
+                        if (!englishToNorwegianDictionaryNew.ContainsKey(row.Cells[1].Value.ToString()))
                             englishToNorwegianDictionaryNew.Add(row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString());
                     }
-                    else
-                    {
-                        MessageBox.Show("There are empty rows, please delete them or fill in empty cells.");
-                    }
+                    Form1.DictionarySave(norwegianToEnglishDictionaryNew, englishToNorwegianDictionaryNew);
+                    _DictionaryLoad();
+                    MessageBox.Show("Changes to dictionary successfully applied.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                Form1.DictionarySave(norwegianToEnglishDictionaryNew, englishToNorwegianDictionaryNew);
-                _DictionaryLoad();
+                else
+                {
+                    MessageBox.Show("There are empty cells, please remove entire row or fill in empty cells.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch(Exception e1)
+            catch
             {
-                MessageBox.Show(e1.Message);
-            }
-            
+                //MessageBox.Show("There were duplicate words detected (or null cells). Changes were not applied.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }           
         }
 
         private void editRowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,7 +89,10 @@ namespace DictionaryApp
 
         private void removeRowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.RemoveAt(dataGridView1.SelectedCells[0].RowIndex);
+            foreach (DataGridViewRow item in dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
         }
 
         private void dataGridView1_MouseDown(object sender, MouseEventArgs e)

@@ -46,9 +46,9 @@
             this.buttonTest = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -229,6 +229,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Translate Word";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(170, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Note: Norwegian or English";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
@@ -249,15 +258,6 @@
             this.label5.Size = new System.Drawing.Size(227, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "Note: Go to Options to edit dictionary.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Note: Norwegian or English";
             // 
             // Form1
             // 
