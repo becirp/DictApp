@@ -32,7 +32,8 @@ namespace DictionaryApp
             _NorwegianToEnglishDictionary = NorwegianToEnglishDictionary;
             _EnglishToNorwegianDictionary = EnglishToNorwegianDictionary;
 
-            fillTableWithWords();            
+            fillTableWithWords();
+            labelWordCounter.Text = _NorwegianToEnglishDictionary.Count.ToString();
         }
 
         private void fillTableWithWords()
@@ -79,7 +80,8 @@ namespace DictionaryApp
             catch
             {
                 //MessageBox.Show("There were duplicate words detected (or null cells). Changes were not applied.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }           
+            }
+            labelWordCounter.Text = _NorwegianToEnglishDictionary.Count.ToString();
         }
 
         private void editRowToolStripMenuItem_Click(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace DictionaryApp
         {
             InitializeComponent();
             DictionaryLoad();
+            
         }
 
         private void buttonAddWordPair_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace DictionaryApp
             }
             textBoxEnglish.Clear();
             textBoxNorwegian.Clear();
+            labelWordCounter.Text = NorwegianToEnglishDictionary.Count.ToString();
         }
 
         private void buttonTranslate_Click(object sender, EventArgs e)
@@ -153,6 +155,7 @@ namespace DictionaryApp
                     }
                 }
                 ConsoleBox.Text = "Dictionary Loaded.";
+                labelWordCounter.Text = NorwegianToEnglishDictionary.Count.ToString();
             }
             catch
             {

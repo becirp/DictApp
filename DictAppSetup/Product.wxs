@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="Dictionary App" Language="1033" Version="1.0.0.0" Manufacturer="Peco Software" UpgradeCode="0136aa38-bdd1-42c5-995d-47d2722c3e88">
+	<Product Id="*" Name="Dictionary App" Language="1033" Version="1.0.1.0" Manufacturer="Peco Software" UpgradeCode="0136aa38-bdd1-42c5-995d-47d2722c3e88">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <Icon Id="icon.ico" SourceFile="..\DictionaryApp\bin\Debug\icon.ico"/>

@@ -49,6 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelWordCounter = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -259,11 +261,34 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Note: Go to Options to edit dictionary.";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(50, 495);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Total word count:";
+            // 
+            // labelWordCounter
+            // 
+            this.labelWordCounter.AutoSize = true;
+            this.labelWordCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWordCounter.ForeColor = System.Drawing.Color.Red;
+            this.labelWordCounter.Location = new System.Drawing.Point(170, 495);
+            this.labelWordCounter.Name = "labelWordCounter";
+            this.labelWordCounter.Size = new System.Drawing.Size(31, 16);
+            this.labelWordCounter.TabIndex = 16;
+            this.labelWordCounter.Text = "N/A";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 504);
+            this.ClientSize = new System.Drawing.Size(800, 535);
+            this.Controls.Add(this.labelWordCounter);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAddWordPair);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
@@ -311,6 +336,8 @@
         private System.Windows.Forms.ToolStripMenuItem viewDictionaryToolStripMenuItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelWordCounter;
     }
 }
 
